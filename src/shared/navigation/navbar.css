@@ -1,0 +1,12 @@
+/* #link li{
+    transition-property: transform;
+    transition-duration: 0.7s;
+} */
+#link01 a.active{
+    background-color: rgb(91, 91, 91);
+    border-radius: 4px;
+    
+}
+/* #link01 li:active{
+    transform: scale(0.7);
+} */

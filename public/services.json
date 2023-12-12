@@ -1,0 +1,45 @@
+[
+    {
+      "id": 1,
+      "name": "Conference and Seminar Planning",
+      "image": "https://i.ibb.co/sbYc0jd/conference.jpg",
+      "price": "$5,000 - $10,000",
+      "description": "Our expert team specializes in meticulously planning and executing conferences and seminars. From venue selection to agenda development, we ensure a seamless and engaging experience for your attendees. Elevate your events with our professional touch."
+    },
+    {
+      "id": 2,
+      "name": "Corporate Meeting",
+      "image": "https://i.ibb.co/6msNyCF/corporate.jpg",
+      "price": "$2,500 - $5,000",
+      "description": "Host successful corporate meetings with our comprehensive planning services. We take care of venue selection, logistics, and audio-visual setup to ensure a productive and professional environment. Your corporate gatherings are in good hands with us."
+    },
+    {
+      "id": 3,
+      "name": "Award Ceremonies",
+      "image": "https://i.ibb.co/rGDRpx7/award.jpg",
+      "price": "$7,000 - $15,000",
+      "description": "Celebrate achievements with our award ceremony planning. We design elegant ceremonies, handle award presentations, and capture memorable moments. Trust us to create an atmosphere that honors excellence and leaves a lasting impression."
+    },
+    {
+      "id": 4,
+      "name": "Team Building Workshop",
+      "image": "https://i.ibb.co/P4STyTG/tambuilding.jpg",
+      "price": "$1,200 per session",
+      "description": "Boost team morale and collaboration with our dynamic team-building workshops. Our activities are tailored to enhance communication and teamwork. From planning to facilitation, we ensure a fun and productive experience for your team."
+    },
+    {
+      "id": 5,
+      "name": "Product Launches",
+      "image": "https://i.ibb.co/ZHggRNb/product.jpg",
+      "price": "$8,000 - $20,000",
+      "description": "Introduce your products in style with our product launch services. We manage everything from venue selection to product demonstrations, ensuring a captivating launch event. Trust us to make your product unveiling memorable and impactful."
+    },
+    {
+      "id": 6,
+      "name": "Budget Planning",
+      "image": "https://i.ibb.co/R00HkSn/budget.jpg",
+      "price": "Consultation Fee: $500",
+      "description": "Optimize your event budget with our expert budget planning services. We analyze costs, negotiate with vendors, and provide a detailed budget plan. Our goal is to help you achieve a successful event without breaking the bank."
+    }
+  ]
+  
