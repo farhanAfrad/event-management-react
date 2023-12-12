@@ -4,7 +4,8 @@ import NavBar from '../../shared/navigation/NavBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
+
 
 
 
@@ -45,7 +46,7 @@ const Login = () => {
             </div>
             <div className='w-3/5 bg-[#bababa] rounded'>
                 <div className="w-full">
-                    <form className="card-body" onSubmit={handleSubmit}>
+                    <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="text-lg font-medium">Email</span>
@@ -65,6 +66,9 @@ const Login = () => {
                             <button className='border px-5 py-3 rounded bg-[#3E3E3E] text-lg font-semibold text-white active:scale-95 transition-transform'>Login</button>
                         </div>
                     </form>
+                    <div className='text-center text-lg pb-4'>
+                        <p className='font-medium'>new here? please <span className='underline text-blue-700'><Link to='/registration'>Register</Link></span></p>
+                    </div>
                 </div>
             </div>
             <ToastContainer></ToastContainer>

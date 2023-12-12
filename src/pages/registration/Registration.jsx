@@ -63,7 +63,7 @@ const Registration = () => {
             </div>
             <div className='w-3/5 bg-[#bababa] rounded'>
                 <div className="w-full">
-                    <form className="card-body" onSubmit={handleSubmit}>
+                    <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">
                             <label className="label">
                                 <span className="text-lg font-medium">Name</span>
@@ -90,7 +90,11 @@ const Registration = () => {
                             <button className='border px-5 py-3 rounded bg-[#3E3E3E] text-lg font-semibold text-white active:scale-95 transition-transform'>Registration</button>
                         </div>
                     </form>
+                    <div className='text-center text-lg pb-4'>
+                        <p className='font-medium'>already have an account? please <span className='underline text-blue-700'><Link to='/login'>login</Link></span></p>
+                    </div>
                 </div>
+               
             </div>
             <ToastContainer></ToastContainer>
         </div>
