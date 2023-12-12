@@ -5,7 +5,7 @@ import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { toast } from 'react-toastify';
 
 const NavBar = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout, loader } = useContext(AuthContext);
     const navigate = useNavigate();
     // creating link as some of the link will be in dynamic use
     const link = <>
@@ -17,13 +17,14 @@ const NavBar = () => {
         logout()
         .then(()=>{
             toast.info('you have successfully logged out');
+          
         })
         .catch(error=>{
             toast.warn(error.message);
         })
     }
     const handleSignin = () =>{
-        navigate('/login')
+        navigate('/login');
     }
     return (
         <div className="flex flex-col md:flex-row justify-between w-full items-center">
