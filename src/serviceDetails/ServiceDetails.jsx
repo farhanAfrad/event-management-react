@@ -1,9 +1,10 @@
 import React from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useLocation, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const services = useLoaderData();
+    
     const {id} = useParams();
     const service = services.find(s => s.id == id);
     console.log(service);

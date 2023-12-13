@@ -39,11 +39,11 @@ const NavBar = () => {
             {/*user*/}
             <div>
                 {user?
-                    <div className='flex'>
+                    <div className='flex gap-2'>
                         <div className="w-10">
                             <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className='rounded-full' />
                         </div>
-                        <button onClick={handleLogout} className='bg-[#3e3e3e] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Logout</button>
+                        <button onClick={handleLogout} className='bg-[#757575] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Logout</button>
                     </div>  :
                     <button onClick={handleSignin} className='bg-[#3e3e3e] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Signin</button>                
                 }

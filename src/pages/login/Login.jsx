@@ -5,6 +5,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { FaGoogle } from "react-icons/fa";
 
 
 
@@ -12,7 +13,7 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 
 const Login = () => {
     
-    const {login} = useContext(AuthContext);
+    const {login,googleSignin} = useContext(AuthContext);
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -27,16 +28,28 @@ const Login = () => {
         // calling login
         login(email, password)
         .then(result =>{
+            console.log(result);
             toast.success('succefully logged in',{
                 autoClose:1500
             });
-            // setTimeout(()=>{
-            //     navigate('./')
-            // },3000)
+            if(location.state){
+                setTimeout(()=>{
+                    navigate(location.state)
+                },3000)  
+            }
         })
         .catch(error =>{
-            console.log(error.message);
             toast.warning(error.message);
+        })
+    }
+    // google sign in
+    const handleGoogleSignin = () =>{
+        googleSignin()
+        .then(result =>{
+            console.log(result);
+        })
+        .catch(error=>{
+            console.log(error.message);
         })
     }
     return (
@@ -62,12 +75,26 @@ const Login = () => {
                                 <a href="#" className="label-text-alt text-lg font-medium link link-hover">Forgot password?</a>
                             </label>
                         </div>
-                        <div className="form-control mt-6">
-                            <button className='border px-5 py-3 rounded bg-[#3E3E3E] text-lg font-semibold text-white active:scale-95 transition-transform'>Login</button>
+                        <div className="form-control mt-1">
+                            <button className='border px-5 py-3 rounded bg-[#3E3E3E] text-lg font-medium text-white active:scale-95 transition-transform'>Login</button>
                         </div>
                     </form>
-                    <div className='text-center text-lg pb-4'>
+                    <div className='text-center text-lg'>
                         <p className='font-medium'>new here? please <span className='underline text-blue-700'><Link to='/registration'>Register</Link></span></p>
+                    </div>
+                    {/* others provider */}
+                    <div className='my-6'>
+                        <div className='flex justify-center items-center gap-3'>
+                            <div className='h-[1px] w-1/3 bg-gray-400'></div>
+                            <span className='text-lg font-medium'>or</span>
+                            <div className='h-[1px] w-1/3 bg-gray-400'></div>
+                        </div>
+                    </div>
+                    <div className='flex justify-center mb-5'>
+                        <button className='flex justify-center items-center gap-2 bg-[#3e3e3e] text-white py-2 px-5 rounded text-lg active:scale-95 transition-transform' onClick={handleGoogleSignin}>
+                            <FaGoogle></FaGoogle>
+                            <span>Continue with Goggle</span>
+                        </button>
                     </div>
                 </div>
             </div>
