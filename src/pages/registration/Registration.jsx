@@ -61,7 +61,7 @@ const Registration = () => {
             <div className='bg-[#3e3e3e] absolute w-full top-0 py:5 md:py-8 md:px-12 lg:px-20'>
                 <NavBar></NavBar>
             </div>
-            <div className='w-3/5 bg-[#bababa] rounded'>
+            <div className='w-2/5 bg-[#bababa] rounded z-50'>
                 <div className="w-full">
                     <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">
@@ -73,6 +73,12 @@ const Registration = () => {
                         <div className="form-control">
                             <label className="label">
                                 <span className="text-lg font-medium">Email</span>
+                            </label>
+                            <input type="email" placeholder="email" className="input input-bordered text-xl" required name='email'/>
+                        </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="text-lg font-medium">Phone</span>
                             </label>
                             <input type="email" placeholder="email" className="input input-bordered text-xl" required name='email'/>
                         </div>
@@ -91,7 +97,7 @@ const Registration = () => {
                         </div>
                     </form>
                     <div className='text-center text-lg pb-4'>
-                        <p className='font-medium'>already have an account? please <span className='underline text-blue-700'><Link to='/login'>login</Link></span></p>
+                        <p className='font-medium'>already have an account? please <span className=' text-blue-600'><Link to='/login'>login</Link></span></p>
                     </div>
                 </div>
                

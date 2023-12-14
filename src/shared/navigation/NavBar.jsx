@@ -12,18 +12,26 @@ const NavBar = () => {
         <li><NavLink to='/' className='py-1 px-3'>Home</NavLink></li>
         <li><NavLink to='/registration' className='py-1 px-3'>Registration</NavLink></li>
         <li><NavLink to='/login' className='py-1 px-3'>Login</NavLink></li>
+        {
+            user && <>
+                <li>
+                    <NavLink to='/profile' className='py-1 px-3'>Profile</NavLink>
+                </li>
+            </>
+        }
+
     </>
-    const handleLogout = () =>{
+    const handleLogout = () => {
         logout()
-        .then(()=>{
-            toast.info('you have successfully logged out');
-          
-        })
-        .catch(error=>{
-            toast.warn(error.message);
-        })
+            .then(() => {
+                toast.info('you have successfully logged out');
+
+            })
+            .catch(error => {
+                toast.warn(error.message);
+            })
     }
-    const handleSignin = () =>{
+    const handleSignin = () => {
         navigate('/login');
     }
     return (
@@ -38,16 +46,16 @@ const NavBar = () => {
             </div>
             {/*user*/}
             <div>
-                {user?
+                {user ?
                     <div className='flex gap-2'>
                         <div className="w-10">
                             <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className='rounded-full' />
                         </div>
                         <button onClick={handleLogout} className='bg-[#757575] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Logout</button>
-                    </div>  :
-                    <button onClick={handleSignin} className='bg-[#3e3e3e] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Signin</button>                
+                    </div> :
+                    <button onClick={handleSignin} className='bg-[#3e3e3e] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Signin</button>
                 }
-                
+
             </div>
         </div>
     );

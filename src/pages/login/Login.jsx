@@ -57,7 +57,7 @@ const Login = () => {
             <div className='bg-[#3e3e3e] absolute w-full top-0 py:5 md:py-8 md:px-12 lg:px-20'>
                 <NavBar></NavBar>
             </div>
-            <div className='w-3/5 bg-[#bababa] rounded'>
+            <div className='w-2/5 bg-[#bababa] rounded'>
                 <div className="w-full">
                     <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">

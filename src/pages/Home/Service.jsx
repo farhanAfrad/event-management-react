@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-    console.log(service);
+    
     const { id,image, description, name, price } = service;
     return (
         <div className='mb-32'>

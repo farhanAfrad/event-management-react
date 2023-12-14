@@ -3,8 +3,11 @@ import {GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthState
 import app from '../firebase/firebase.config';
 
 
-
+// this is used as general context
 export const AuthContext = new createContext(null);
+
+// this context is used to share data between service details and user profile component
+export const AuthArrayContext = new createContext([]);
 
 
 const AuthProvider = ({children}) => {
@@ -15,7 +18,17 @@ const AuthProvider = ({children}) => {
     const googleProvider = new GoogleAuthProvider();
     
     const [user, setUser] = useState(null);
-    const [loader, setLoader] = useState(true)
+
+    // this state is used to fixing the problem realted private route and other reloading issue
+    const [loader, setLoader] = useState(true);
+
+    // this state is used for collecting selected services from service details page
+    const [selectedService, setSelectedService] = useState([]);
+
+    const setService = (name) =>{           
+            const newArray = [...selectedService,name]
+            setSelectedService(newArray);        
+    }
 
     // creating user
     const createUser = (email, password) =>{
@@ -36,6 +49,8 @@ const AuthProvider = ({children}) => {
     const googleSignin = () =>{
         return signInWithPopup(auth,googleProvider);
     }
+
+    // onAuthState is noramally used in the useEffect
     useEffect(()=>{
         const unSubscribe = onAuthStateChanged(auth, currentUser=>{
             console.log(currentUser);
@@ -51,12 +66,20 @@ const AuthProvider = ({children}) => {
         login,
         logout,
         loader,
-        googleSignin
+        googleSignin,
+        setService,
+        
+    }
+    // this is passed to userProfile
+    const autharray = {
+        selectedService
     }
 
     return (
         <AuthContext.Provider value={authInfo}>
-            {children};
+            <AuthArrayContext.Provider value={autharray}>
+                {children};
+            </AuthArrayContext.Provider>
         </AuthContext.Provider>
     );
 };
