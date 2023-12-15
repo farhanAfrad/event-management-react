@@ -17,6 +17,9 @@ const NavBar = () => {
                 <li>
                     <NavLink to='/profile' className='py-1 px-3'>Profile</NavLink>
                 </li>
+                <li>
+                    <NavLink to='/yourservices' className='py-1 px-3'>Your Services</NavLink>
+                </li>
             </>
         }
 

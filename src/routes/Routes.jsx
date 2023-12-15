@@ -8,6 +8,8 @@ import ServiceDetails from '../serviceDetails/ServiceDetails';
 import PrivateRoute from '../privateRoute/PrivateRoute';
 import UserProfile from '../pages/userProfile/UserProfile';
 import PrivateRouteProfile from '../privateRoute/privateRouteProfile';
+import YourServices from '../yourServices/YourServices';
+import PrivateRouteYourServices from '../privateRoute/PrivateRouteYourServices';
 
 
 
@@ -43,6 +45,14 @@ const Routes = createBrowserRouter([
 
                     <UserProfile></UserProfile>
                 </PrivateRouteProfile>
+            },
+            {
+                path:'/yourservices',
+                element:<PrivateRouteYourServices>
+
+                    <YourServices></YourServices>
+                </PrivateRouteYourServices>,
+                loader:()=>fetch('../../public/services.json')
             }
         ]
     }

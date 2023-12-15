@@ -61,7 +61,7 @@ const Registration = () => {
             <div className='bg-[#3e3e3e] absolute w-full top-0 py:5 md:py-8 md:px-12 lg:px-20'>
                 <NavBar></NavBar>
             </div>
-            <div className='w-2/5 bg-[#bababa] rounded z-50'>
+            <div className='w-4/5 mt-44 lg:w-2/5 bg-[#bababa] rounded-sm'>
                 <div className="w-full">
                     <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">

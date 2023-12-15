@@ -3,6 +3,7 @@ import NavBar from '../../shared/navigation/NavBar';
 import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
 import Footer from './Footer';
+import ClientResoponse from './ClientResoponse';
 
 
 const Home = () => {
@@ -38,8 +39,12 @@ const Home = () => {
                     }
                 </div>
             </div>
+            {/* client response */}
+            <div>
+                <ClientResoponse></ClientResoponse>
+            </div>
             {/* footer section */}
-            <div className='bg-neutral'>
+            <div className='bg-neutral mt-28'>
                 <Footer></Footer>
             </div>
         </div>
