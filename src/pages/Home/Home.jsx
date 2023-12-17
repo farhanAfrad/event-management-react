@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
 import Footer from './Footer';
 import ClientResoponse from './ClientResoponse';
+import Calender from '../../calender/calender';
 
 
 const Home = () => {
@@ -42,6 +43,10 @@ const Home = () => {
             {/* client response */}
             <div>
                 <ClientResoponse></ClientResoponse>
+            </div>
+            {/* calender: pick your scedule*/}
+            <div>
+                <Calender></Calender>
             </div>
             {/* footer section */}
             <div className='bg-neutral mt-28'>
