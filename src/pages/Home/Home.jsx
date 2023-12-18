@@ -36,7 +36,7 @@ const Home = () => {
                 </div>
                 {/* banner title */}
                 <div className='text-center'>
-                    <h1 className='text-7xl text-white font-semibold'>here goes banner title</h1>
+                    <h1 className='text-3xl md:5xl lg:text-7xl text-white font-semibold'>Summit Symphony</h1>
                 </div>
             </div>
 

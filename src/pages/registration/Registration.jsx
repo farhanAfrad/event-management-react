@@ -57,7 +57,7 @@ const Registration = () => {
 
     return (
         <div className='flex justify-center items-center w-full h-screen relative'>
-            <div className='bg-[#3e3e3e] absolute w-full top-0 py:5 md:py-8 md:px-12 lg:px-20'>
+            <div className='bg-[#3e3e3e] absolute w-full top-0  md:px-12 lg:px-20'>
                 <NavBar></NavBar>
             </div>
             <div className='w-4/5 mt-44 mb-11 lg:w-2/5 bg-[#bababa] rounded-sm'>

@@ -38,21 +38,33 @@ const NavBar = () => {
         navigate('/login');
     }
     return (
-        <div className="flex flex-col md:flex-row justify-between w-full items-center">
+        <div className="flex justify-between items-center py-5 md:py-0">
             {/* logo */}
-            <div className='text-4xl font-extrabold text-white '>EVANTO</div>
+            <div className='text-4xl font-extrabold text-white hidden lg:block'>EVANTOo</div>
             {/* MENU */}
-            <div id='link01'>
-                <ul className='flex md:gap-4 text-white font-medium text-lg'>
+            <div className="dropdown">
+                <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </div>
+                <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] shadow bg-base-100 rounded-box w-52">
+                    {link}
+                </ul>
+            </div>
+            <div id='link01'className=' hidden lg:flex'>
+                <ul className='flex text-white font-medium text-lg'>
                     {link}
                 </ul>
             </div>
             {/*user*/}
             <div>
                 {user ?
-                    <div className='flex gap-2'>
-                        <div className="w-10">
-                            <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className='rounded-full' />
+                    <div className='flex gap-3 items-center'>
+                        <p className='text-white'>{user.displayName}</p>
+                        <div className='flex flex-col justify-center items-center'>
+                            <div className="w-10">
+                                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" className='rounded-full' />
+                            </div>
+
                         </div>
                         <button onClick={handleLogout} className='bg-[#757575] py-1 px-5 text-white active:scale-90 transition-transform text-lg font-medium'>Logout</button>
                     </div> :
