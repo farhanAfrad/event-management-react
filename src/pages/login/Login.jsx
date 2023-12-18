@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import NavBar from '../../shared/navigation/NavBar';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -14,6 +14,7 @@ import { FaGoogle } from "react-icons/fa";
 const Login = () => {
     
     const {login,googleSignin} = useContext(AuthContext);
+    const [erros,setErros] = useState('');
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -39,7 +40,8 @@ const Login = () => {
             }
         })
         .catch(error =>{
-            toast.warning(error.message);
+            console.log(error.message)
+            setErros('your email or password does not match!!!')
         })
     }
     // google sign in
@@ -95,6 +97,12 @@ const Login = () => {
                             <FaGoogle></FaGoogle>
                             <span>Continue with Goggle</span>
                         </button>
+                    </div>
+                    {/* this is to error message */}
+                    <div className='pb-4 mt-2'>
+                        {
+                            erros && <p className='text-center text-sm text-red-600'>{erros}</p>
+                        }
                     </div>
                 </div>
             </div>

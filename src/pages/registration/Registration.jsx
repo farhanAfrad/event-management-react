@@ -25,12 +25,11 @@ const Registration = () => {
        const password = form.get('password');
 
        if(!/[A-Z]/.test(password)){
-        toast.warn('your password must contain capital letter');
-        
+        setErros('your password must contain capital letter')
         return;
        }
        if(!/[^a-zA-Z0-9\s]/.test(password)){
-        toast.warn('your password must contain special cahracter');
+        setErros('your password must contain special cahracter');
         return;
        }
     //    resetting setErros
@@ -41,11 +40,11 @@ const Registration = () => {
        .then(result =>{
         console.log(result.user);
         toast.success('congrats! you have successfully done registration',{autoClose: 1500});
-        // after seccess it will redirect user to the login page
-        setTimeout(()=>{
-            navigate('/login',{state:{key:location.pathname}});
+        // after success it will redirect user to the login page
+        // setTimeout(()=>{
+        //     navigate('/login',{state:{key:location.pathname}});
             
-        },3000)
+        // },3000)
         
        })
        .catch(error=>{
@@ -61,7 +60,7 @@ const Registration = () => {
             <div className='bg-[#3e3e3e] absolute w-full top-0 py:5 md:py-8 md:px-12 lg:px-20'>
                 <NavBar></NavBar>
             </div>
-            <div className='w-4/5 mt-44 lg:w-2/5 bg-[#bababa] rounded-sm'>
+            <div className='w-4/5 mt-44 mb-11 lg:w-2/5 bg-[#bababa] rounded-sm'>
                 <div className="w-full">
                     <form className="card-body pb-1" onSubmit={handleSubmit}>
                         <div className="form-control">
@@ -80,7 +79,7 @@ const Registration = () => {
                             <label className="label">
                                 <span className="text-lg font-medium">Phone</span>
                             </label>
-                            <input type="email" placeholder="email" className="input input-bordered text-xl" required name='email'/>
+                            <input type="text" placeholder="phone" className="input input-bordered text-xl" name='phone'/>
                         </div>
                         <div className="form-control">
                             <label className="label">
@@ -96,8 +95,13 @@ const Registration = () => {
                             <button className='border px-5 py-3 rounded bg-[#3E3E3E] text-lg font-semibold text-white active:scale-95 transition-transform'>Registration</button>
                         </div>
                     </form>
-                    <div className='text-center text-lg pb-4'>
+                    <div className='text-center text-lg'>
                         <p className='font-medium'>already have an account? please <span className=' text-blue-600'><Link to='/login'>login</Link></span></p>
+                    </div>
+                    <div className='pb-4 mt-2'>
+                        {
+                            erros && <p className='text-center text-sm text-red-600'>{erros}</p>
+                        }
                     </div>
                 </div>
                

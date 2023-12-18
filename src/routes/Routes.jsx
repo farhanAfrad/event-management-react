@@ -10,6 +10,7 @@ import UserProfile from '../pages/userProfile/UserProfile';
 import PrivateRouteProfile from '../privateRoute/privateRouteProfile';
 import YourServices from '../yourServices/YourServices';
 import PrivateRouteYourServices from '../privateRoute/PrivateRouteYourServices';
+import ErrorPage from '../errorPage/ErrorPage';
 
 
 
@@ -17,6 +18,7 @@ const Routes = createBrowserRouter([
     {
         path:'/',
         element:<Layout></Layout>,
+        errorElement:<ErrorPage></ErrorPage>,
         children:[
             {
                 path:'/',
