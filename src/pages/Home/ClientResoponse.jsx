@@ -1,7 +1,18 @@
 import React from 'react';
 import banner from '../../../public/banner2.jpg'
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { useEffect } from 'react';
 
 const ClientResoponse = () => {
+    // this is used for aos initialization
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 1000,
+          easing: "ease-out-cubic",
+        });
+      }, []);
     return (
         <div>
             <div className="relative min-h-screen" style={{ backgroundImage: `url(${banner})` }}>
@@ -12,8 +23,8 @@ const ClientResoponse = () => {
 
 
                     <div className="container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 xl:px-20 px-10 py-20 gap-6">
-                        <div>
-                            <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 z-40">
+                        <div className='z-50' data-aos='fade-right' data-aos-delay='500'>
+                            <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 " data-aos='zoom-in'>
                                 <div className="text-gray-600 dark:text-gray-200 group-hover:text-white flex flex-col items-center">
                                     <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0)">
@@ -54,13 +65,13 @@ const ClientResoponse = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center justify-center mt-10">
-                                <img src="https://i.ibb.co/ZgF5Zzz/avatar-1.png" alt="profile pictre" className="w-12 h-12 z-40" />
-                                <p className="text-base font-semibold leading-4 my-2 text-white  z-40">Tom Koch</p>
+                                <img src="https://i.ibb.co/ZgF5Zzz/avatar-1.png" alt="profile pictre" className="w-12 h-12 " />
+                                <p className="text-base font-semibold leading-4 my-2 text-white  ">Tom Koch</p>
                                 
                             </div>
                         </div>
-                        <div>
-                        <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 z-40">
+                        <div className='z-50' data-aos='zoom-in'>
+                        <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 ">
                                 <div className="text-gray-600 dark:text-gray-200   group-hover:text-white flex flex-col items-center">
                                     <svg className="" width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0)">
@@ -101,13 +112,13 @@ const ClientResoponse = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center justify-center mt-10">
-                                <img src="https://i.ibb.co/8BLjmqz/avatar-2.png" alt="profile pictre" className="w-12 h-12 z-40" />
-                                <p className="text-base font-semibold leading-4 my-2 text-white  z-40">Alan Max</p>
+                                <img src="https://i.ibb.co/8BLjmqz/avatar-2.png" alt="profile pictre" className="w-12 h-12 " />
+                                <p className="text-base font-semibold leading-4 my-2 text-white  ">Alan Max</p>
                                 
                             </div>
                         </div>
-                        <div>
-                        <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 z-40">
+                        <div className='z-50' data-aos='fade-left' data-aos-delay='500'>
+                        <div className="group w-full bg-white dark:bg-gray-800  relative flex flex-col items-center hover:bg-indigo-700 cursor-pointer shadow-md md:p-12 p-6 ">
                                 <div className="text-gray-600 dark:text-gray-200   group-hover:text-white flex flex-col items-center">
                                     <svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <g clipPath="url(#clip0)">
@@ -148,8 +159,8 @@ const ClientResoponse = () => {
                                 </div>
                             </div>
                             <div className="flex flex-col items-center justify-center mt-10">
-                                <img src="https://i.ibb.co/y0KCX7p/avatar-3.png" alt="profile pictre" className="w-12 h-12 z-40" />
-                                <p className="text-base font-semibold leading-4 my-2  text-white  z-40">Kera Joo</p>
+                                <img src="https://i.ibb.co/y0KCX7p/avatar-3.png" alt="profile pictre" className="w-12 h-12 " />
+                                <p className="text-base font-semibold leading-4 my-2  text-white  ">Kera Joo</p>
                                 
                             </div>
                         </div>

@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '../../shared/navigation/NavBar';
 import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
 import Footer from './Footer';
 import ClientResoponse from './ClientResoponse';
 import Calender from '../../calender/calender';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 
 
 const Home = () => {
     const services = useLoaderData();
     console.log(services.length);
+    
+    // this is used for aos initialization
+    useEffect(() => {
+        AOS.init({
+          disable: "phone",
+          duration: 700,
+          easing: "ease-out-cubic",
+        });
+      }, []);
 
     return (
         <div className='w-full'>
@@ -45,7 +57,7 @@ const Home = () => {
                 <ClientResoponse></ClientResoponse>
             </div>
             {/* calender: pick your scedule*/}
-            <div>
+            <div data-aos="zoom-in">
                 <Calender></Calender>
             </div>
             {/* footer section */}
