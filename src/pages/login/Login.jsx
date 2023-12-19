@@ -45,7 +45,7 @@ const Login = () => {
             }
         })
         .catch(error =>{
-            console.log(error.message)
+            toast.warn(error.message);
             setErros('your email or password does not match!!!')
         })
     }

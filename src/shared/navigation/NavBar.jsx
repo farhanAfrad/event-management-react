@@ -27,8 +27,6 @@ const NavBar = () => {
     const handleLogout = () => {
         logout()
             .then(() => {
-                toast.info('you have successfully logged out');
-
             })
             .catch(error => {
                 toast.warn(error.message);
