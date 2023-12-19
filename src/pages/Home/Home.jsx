@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import NavBar from '../../shared/navigation/NavBar';
 import { useLoaderData } from 'react-router-dom';
 import Service from './Service';
@@ -29,7 +29,7 @@ const Home = () => {
             <div className='w-full h-[75vh] from-[#0d03334d] to-[#0d03334d] flex items-center justify-center relative'>
 
                 <video autoPlay loop muted playsInline className='absolute right-0 bottom-0 -z-10 aspect-video w-full h-screen object-cover object-top'>
-                    <source src='../../../public/conference.mp4' type='video/mp4' />
+                    <source src='./conference.mp4' type='video/mp4' />
                 </video>
                 <div className='absolute top-0 left-0 w-full py:5 md:py-8 md:px-12 lg:px-20'>
                     <NavBar></NavBar>

@@ -23,7 +23,7 @@ const Routes = createBrowserRouter([
             {
                 path:'/',
                 element:<Home></Home>,
-                loader:()=>fetch('../../public/services.json')
+                loader:()=>fetch('./services.json')
             },
             {
                 path:'/services/:id',
@@ -31,7 +31,7 @@ const Routes = createBrowserRouter([
                 element:<PrivateRoute>
                     <ServiceDetails></ServiceDetails>,
                 </PrivateRoute>,
-                loader:()=>fetch('../../public/services.json')
+                loader:()=>fetch('./services.json')
             },
             {
                 path:'/registration',
@@ -54,7 +54,7 @@ const Routes = createBrowserRouter([
 
                     <YourServices></YourServices>
                 </PrivateRouteYourServices>,
-                loader:()=>fetch('../../public/services.json')
+                loader:()=>fetch('./services.json')
             }
         ]
     }
