@@ -1,5 +1,5 @@
 import React from 'react';
-import banner from '../../../public/banner2.jpg'
+import banner from '/banner2.jpg'
 import 'aos/dist/aos.css';
 import AOS from 'aos';
 import { useEffect } from 'react';

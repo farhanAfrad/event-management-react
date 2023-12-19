@@ -38,6 +38,11 @@ const Login = () => {
                     navigate(location.state)
                 },3000)  
             }
+            else{
+                setTimeout(()=>{
+                    navigate('/')
+                },3000) 
+            }
         })
         .catch(error =>{
             console.log(error.message)

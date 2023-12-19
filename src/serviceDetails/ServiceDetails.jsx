@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { useLoaderData, useLocation, useParams } from 'react-router-dom';
+import  { useContext } from 'react';
+import { useLoaderData, useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import {  AuthContext} from '../AuthProvider/AuthProvider';
 
@@ -11,6 +11,7 @@ const ServiceDetails = () => {
     
     // this is used to collect the id of dynamic routing
     const { id } = useParams();
+   
     
     // this is to services that id matched with the data from all services. this is mainly used to show that service in the UI.
     const service = services.find(s => s.id == id);
